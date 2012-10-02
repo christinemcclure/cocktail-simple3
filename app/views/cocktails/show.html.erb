@@ -2,16 +2,16 @@
 
 <h1><%= @cocktail.name %></h1>
 
+<h2>Ingredients</h2>
 <ul>
 <% @cocktail.ingredients.each do |ingredient| %>
   <li>
-    <strong>Ingredient:</strong>
     <%= ingredient.ingredient %>
   </li>
 <% end %>
 </ul>
 
-  <h2>Notes</h2>
+<h2>Notes</h2>
 <p><%= @cocktail.notes %></p>
 
 
