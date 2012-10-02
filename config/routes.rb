@@ -1,5 +1,7 @@
 CocktailSimple3::Application.routes.draw do
-  resources :ingredients
+  resources :ingredients do
+    resources :cocktails
+  end
 
   resources :cocktails do
     resources :ingredients
