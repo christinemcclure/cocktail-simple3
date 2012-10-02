@@ -34,7 +34,8 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/1/edit
   def edit
-    @ingredient = Ingredient.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @ingredient = @cocktail.ingredients.find(params[:id])
   end
 
   # POST /ingredients
