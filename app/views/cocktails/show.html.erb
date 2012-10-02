@@ -13,16 +13,7 @@
 </ul>
 
 <h3>Add an ingredient</h3>
-<%= form_for([@cocktail, @cocktail.ingredients.build]) do |f| %>
-  <p>
-    <%= f.text_field :ingredient %>
-  </p>
-
-  <p>
-    <%= f.submit "Add" %>
-  </p>
-<% end %>
-
+<%= render "ingredients/form" %>
 
 <h2>Directions</h2>
 <p><%= @cocktail.notes %></p>
