@@ -7,7 +7,7 @@
 <% @cocktail.ingredients.each do |ingredient| %>
   <li>
     <%= ingredient.ingredient %>
-     <%= link_to 'Delete Ingredient', [ingredient.cocktail, ingredient], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+     <%= link_to 'Delete', [ingredient.cocktail, ingredient], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
   </li>
 <% end %>
 </ul>
@@ -25,7 +25,7 @@
 <% end %>
 
 
-<h2>Notes</h2>
+<h2>Directions</h2>
 <p><%= @cocktail.notes %></p>
 
 
