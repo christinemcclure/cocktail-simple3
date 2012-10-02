@@ -1,10 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @cocktail.name %></h1>
+
+<ul>
+<% @cocktail.ingredients.each do |ingredient| %>
+  <li>
+    <strong>Ingredient:</strong>
+    <%= ingredient.ingredient %>
+  </li>
+<% end %>
+</ul>
+
+  <h2>Notes</h2>
 <p><%= @cocktail.notes %></p>
-
-
-
 
 
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
