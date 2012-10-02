@@ -57,7 +57,8 @@ class CocktailsController < ApplicationController
   # PUT /cocktails/1.json
   def update
     @cocktail = Cocktail.find(params[:id])
-
+    @ingredient = @cocktail.ingredients.find(params[:id])
+    
     respond_to do |format|
       if @cocktail.update_attributes(params[:cocktail])
         format.html { redirect_to @cocktail, notice: 'Cocktail was successfully updated.' }

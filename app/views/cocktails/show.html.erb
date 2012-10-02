@@ -7,17 +7,13 @@
 <% @cocktail.ingredients.each do |ingredient| %>
   <li>
     <%= ingredient.ingredient %>
-     <%= link_to 'Delete', [ingredient.cocktail, ingredient], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
   </li>
 <% end %>
 </ul>
-
-<h3>Add an ingredient</h3>
-<%= render "ingredients/form" %>
 
 <h2>Directions</h2>
 <p><%= @cocktail.notes %></p>
 
 
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
+<%= link_to 'Edit recipe', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>
