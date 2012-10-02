@@ -11,6 +11,19 @@
 <% end %>
 </ul>
 
+<h2>Add an ingredient</h2>
+<%= form_for([@cocktail, @cocktail.ingredients.build]) do |f| %>
+  <p>
+    <%= f.label :ingredient %><br />
+    <%= f.text_field :ingredient %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
 <h2>Notes</h2>
 <p><%= @cocktail.notes %></p>
 
