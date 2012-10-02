@@ -40,17 +40,9 @@ class IngredientsController < ApplicationController
   # POST /ingredients
   # POST /ingredients.json
   def create
-    @ingredient = Ingredient.new(params[:ingredient])
-
-    respond_to do |format|
-      if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
-        format.json { render json: @ingredient, status: :created, location: @ingredient }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
-      end
-    end
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @ingredient = @cocktail.ingredients.create(params[:ingredient])
+    redirect_to cocktail_path(@cocktail)
   end
 
   # PUT /ingredients/1
