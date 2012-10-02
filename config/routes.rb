@@ -1,9 +1,13 @@
 CocktailSimple3::Application.routes.draw do
   resources :ingredients
 
-  resources :cocktails
+  resources :cocktails do
+    resources :ingredients
+  end
 
   root to: 'cocktails#index'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
