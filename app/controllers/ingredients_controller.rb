@@ -64,12 +64,10 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1
   # DELETE /ingredients/1.json
   def destroy
-    @ingredient = Ingredient.find(params[:id])
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @ingredient = @cocktail.ingredients.find(params[:id])
     @ingredient.destroy
-
-    respond_to do |format|
-      format.html { redirect_to ingredients_url }
-      format.json { head :no_content }
-    end
+    redirect_to cocktail_path(@cocktail)
+    
   end
 end
