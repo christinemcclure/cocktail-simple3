@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @cocktail.name %>
-</p>
+<h1><%= @cocktail.name %></h1>
+<p><%= @cocktail.notes %></p>
+
+
+
 
 
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
