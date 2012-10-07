@@ -1,8 +1,8 @@
 CocktailSimple3::Application.routes.draw do
-  resources :ingredients
+  #resources :ingredients
 
   resources :cocktails do
-    resources :ingredients
+    resources :ingredients, except: [:index, :show]
   end
 
   root to: 'cocktails#index'
