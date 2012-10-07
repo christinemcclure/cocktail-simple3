@@ -1,5 +1,6 @@
 <%= form_for([@cocktail, @cocktail.ingredients.build]) do |f| %>
-  <p>
+<%-# form_for([@cocktail, @ingredient]) do |f| # this is karl's line - doesn't work on my version%>
+<p>
     <%= f.text_field :ingredient %>
   </p>
 
