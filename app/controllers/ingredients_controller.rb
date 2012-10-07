@@ -34,6 +34,7 @@ class IngredientsController < ApplicationController
 
   # GET /ingredients/1/edit
   def edit
+    @cocktail = Cocktail.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
   end
 
@@ -48,11 +49,12 @@ class IngredientsController < ApplicationController
   # PUT /ingredients/1
   # PUT /ingredients/1.json
   def update
+    @cocktail = Cocktail.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
 
     respond_to do |format|
       if @ingredient.update_attributes(params[:ingredient])
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
+        format.html { redirect_to cocktail_path(@cocktail), notice: 'Ingredient was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
