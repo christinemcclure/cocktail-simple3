@@ -7,8 +7,8 @@
 <% @cocktail.ingredients.each do |ingredient| %>
   <li>
     <%= ingredient.ingredient %>
-    <%= link_to 'Edit ingredient', edit_cocktail_ingredient_path(ingredient) %>
-     <%= link_to 'Delete ingredient', [ingredient.cocktail, ingredient], :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+    <%= link_to 'Edit ingredient', edit_cocktail_ingredient_path(ingredient),:class => 'btn' %>
+     <%= link_to 'Delete ingredient', [ingredient.cocktail, ingredient], :class => 'btn', :method => :delete, :data => { :confirm => 'Are you sure?' } %>
   </li>
 <% end %>
 </ul>
