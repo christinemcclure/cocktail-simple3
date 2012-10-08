@@ -36,6 +36,7 @@ class IngredientsController < ApplicationController
   def edit
     @cocktail = Cocktail.find(params[:id])
     @ingredient = Ingredient.find(params[:id])
+    @ingredient.edit
   end
 
   # POST /ingredients
