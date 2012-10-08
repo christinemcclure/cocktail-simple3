@@ -25,9 +25,3 @@ ingredients = cocktail.ingredients.create([
 
 cocktail = Cocktail.create(:name => "Manhattan", :notes => "Mix all")
 
-
-
-
-
-
-
